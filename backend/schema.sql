@@ -51,3 +51,12 @@ CREATE TABLE clock_events(
 	latitude DOUBLE PRECISION,
 	longitude DOUBLE PRECISION
 );
+
+CREATE TABLE weeklyTrend(
+    id SERIAL PRIMARY KEY,
+    day VARCHAR(10) NOT NULL UNIQUE
+);
+
+INSERT INTO weeklyTrend (day) VALUES
+('Monday'), ('Tuesday'), ('Wednesday'), ('Thursday'),
+('Friday'), ('Saturday'), ('Sunday')
