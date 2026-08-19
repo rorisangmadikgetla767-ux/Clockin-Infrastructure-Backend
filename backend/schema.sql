@@ -60,3 +60,15 @@ CREATE TABLE weeklyTrend(
 INSERT INTO weeklyTrend (day) VALUES
 ('Monday'), ('Tuesday'), ('Wednesday'), ('Thursday'),
 ('Friday'), ('Saturday'), ('Sunday')
+
+CREATE TABLE Account(
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(100) NOT NULL,
+    passwordHash TEXT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    role VARCHAR(20) NOT NULL,
+    site: DOUBLE PRECISION,
+    hourlyRate: INTEGER NOT NULL,
+    isManager: BOOLEAN DEFAULT true,
+    created_at TIMESTAMPTZ DEFAULT now()
+);
