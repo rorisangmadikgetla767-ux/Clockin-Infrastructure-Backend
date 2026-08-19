@@ -8,4 +8,4 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
-@app.post
+@app.post("/employees" response_model=scheamas.EmployeeCreate)

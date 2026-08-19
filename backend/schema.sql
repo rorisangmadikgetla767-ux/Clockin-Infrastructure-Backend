@@ -13,9 +13,17 @@ CREATE TABLE employees (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     role VARCHAR(50),
-    location_id INTEGER NOT NULL REFERENCES clockit(id),
-    active BOOLEAN DEFAULT true,
-    created_at TIMESTAMPTZ DEFAULT now()
+    site INTEGER NOT NULL REFERENCES clockit(id),
+    hourlyRate INTEGER NOT NULL,
+    badge:VARCHAR(20),
+    status BOOLEAN DEFAULT true,
+    clockIn: BOOLEAN DEFAULT true,
+    clockOut: BOOLEAN DEFAULT false,
+    hoursToday: INTEGER NOT NULL,
+    weekHours: INTEGER NOT NULL,
+    overtimeHours: INTEGER NOT NULL,
+    locationVerified:BOOLEAN DEFAULT true,
+    initials: VARCHAR(10)
 );
 
 CREATE TABLE qr_tokens (
