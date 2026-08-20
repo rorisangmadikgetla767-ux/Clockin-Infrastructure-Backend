@@ -8,4 +8,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
-@app.post("/employees" response_model=scheamas.EmployeeCreate)
+@app.post("/employees" response_model=scheamas.EmployeeCreate):
+def getEmployees():
+    # We have to define setup our database engine before we can write our endpoints.

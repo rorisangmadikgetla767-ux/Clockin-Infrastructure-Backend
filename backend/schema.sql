@@ -72,3 +72,14 @@ CREATE TABLE Account(
     isManager: BOOLEAN DEFAULT true,
     created_at TIMESTAMPTZ DEFAULT now()
 );
+
+CREATE TABLE Shift(
+    id SERIAL PRIMARY KEY,
+    personId VARCHAR(50) UNIQUE NOT NULL,
+    date DATE UNIQUE NOT NULL,
+    start VARCHAR(20) NOT NULL,
+    end VARCHAR(20) NOT NULL,
+    site DOUBLE PRECISION,
+    note VARCHAR(20)
+
+);
